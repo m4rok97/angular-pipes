@@ -1,0 +1,59 @@
+<h1>Non commons pipes</h1>
+<p>
+  Pipes included in Angular - Usually in the Common Module
+</p>
+
+<div class="grid">
+  <div class="col-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      Hello {{ gender | i18nSelect: nameMap }} {{ name }} is a pleasure to meet you!
+    </p-fieldset>
+    <div class="no-commons-button">
+      <button pButton type="button" label="Change gender" class="p-button-help" (click)="changeGender($event)"></button>
+    </div>
+  </div>
+  <div class="col-6">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      Currently you have {{ clients.length| i18nPlural: pluralMap }}.
+    </p-fieldset>
+    <div class="no-commons-button">
+      <button pButton type="button" label="Delete Person" class="p-button-danger" (click)="deletePerson($event)">
+      </button>
+    </div>
+  </div>
+  <div class="col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>
+        {{ clients }}
+      </pre>
+
+      <b>Slice 0:2</b>
+      <pre>
+        {{ clients | slice: 0:2 }}
+      </pre>
+    </p-fieldset>
+  </div>
+  <div class="col-6">
+    <p-fieldset legend="Key Value Pipe" [toggleable]="true">
+      <ul *ngFor="let item of person | keyvalue">
+        <li><b>{{item.key | titlecase}} : {{item.value}}</b></li>
+      </ul>
+    </p-fieldset>
+  </div>
+  <div class="col-6">
+    <p-fieldset legend="Json Pipe" [toggleable]="true">
+      <pre>{{person | json}}</pre>
+    </p-fieldset>
+  </div>
+  <div class="col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <pre *ngIf="!(valuePromise | async)">Resolving promise</pre>
+      <pre>{{valuePromise | async}}</pre>
+
+      <pre *ngIf="!(myObservable | async)">Resolving observable</pre>
+      <pre>{{myObservable | async}}</pre>
+    </p-fieldset>
+  </div>
+</div>
+
