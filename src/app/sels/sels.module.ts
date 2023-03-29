@@ -5,25 +5,22 @@ import { NoCommonsComponent } from './pages/no-commons/no-commons.component';
 import { BasicsComponent } from './pages/basics/basics.component';
 import { SortingComponent } from './pages/sorting/sorting.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-
-
+import { UppercasePipe } from './pipes/uppercase.pipe';
 
 @NgModule({
   declarations: [
     NumbersComponent,
     NoCommonsComponent,
     BasicsComponent,
-    SortingComponent
+    SortingComponent,
+    UppercasePipe,
   ],
   exports: [
     NumbersComponent,
     NoCommonsComponent,
     BasicsComponent,
-    SortingComponent
+    SortingComponent,
   ],
-  imports: [
-    CommonModule,
-    PrimeNgModule
-  ]
+  imports: [CommonModule, PrimeNgModule],
 })
-export class SelsModule { }
+export class SelsModule {}
